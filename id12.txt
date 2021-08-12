@@ -1,0 +1,4 @@
+@DeleteMapping("/products/{id}")
+public void delete(@PathVariable Integer id) {
+    service.delete(id);
+}

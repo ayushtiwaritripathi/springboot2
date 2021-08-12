@@ -1,0 +1,4 @@
+@GetMapping("/products")
+public List<Product> list() {
+    return service.listAll();
+}

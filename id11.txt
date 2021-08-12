@@ -1,0 +1,10 @@
+@PutMapping("/products/{id}")
+public ResponseEntity<?> update(@RequestBody Product product, @PathVariable Integer id) {
+    try {
+        Product existProduct = service.get(id);
+        service.save(product);
+        return new ResponseEntity<>(HttpStatus.OK);
+    } catch (NoSuchElementException e) {
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }      
+}
